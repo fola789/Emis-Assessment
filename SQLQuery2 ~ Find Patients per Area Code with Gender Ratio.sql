@@ -5,7 +5,7 @@ SELECT
     SUM(CASE WHEN ["gender"] = 'Female' THEN 1 ELSE 0 END) AS female_patients,
     CAST(SUM(CASE WHEN ["gender"] = 'Male' THEN 1 ELSE 0 END) AS FLOAT) / NULLIF(SUM(CASE WHEN ["gender"] = 'Female' THEN 1 ELSE 0 END), 0) AS gender_ratio
 FROM 
-    patient
+    [emis].[dbo].[patient]
 WHERE 
     ["postcode"] LIKE '[A-Z]%[0-9]%'
 GROUP BY 

@@ -1,6 +1,6 @@
 SELECT TOP 0 *
 INTO #temp_medication
-FROM medication
+FROM [emis].[dbo].[medication]
 GO
 
 DECLARE @i INT = 2 -- Set the starting number of the CSV file
